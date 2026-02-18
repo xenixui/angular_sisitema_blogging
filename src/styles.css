@@ -1,1 +1,316 @@
-/* You can add global styles to this file, and also import other style files */
+/*Variables*/
+:root {
+    /*Color*/
+    --color-primary: hsla(230, 50%, 34%, 1);
+    --color-primary-hover: hsl(230, 50%, 27%);
+    --color-primary-active: hsl(230, 50%, 20%);
+    --color-on-primary: hsla(0, 0%, 100%, 1);
+    --color-primary-container: hsla(230, 60%, 90%, 1);
+    --color-on-primary-container: hsla(230, 50%, 15%, 1);
+
+    --color-surface: hsla(0, 0%, 100%, 1);
+    --color-surface-var: hsla(270, 4%, 90%, 1);
+    --color-on-surface: hsla(266, 3%, 10%, 1);
+    --color-on-surface-var: hsla(270, 3%, 30%, 1);
+    --color-outline: hsla(266, 3%, 50%, 1);
+    --color-outline-var: hsla(264, 3%, 80%, 1);
+
+    --color-opacity-primary-12: hsla(230, 50%, 34%, 0.12);
+
+    /*Border radius*/
+    --border-radius-none: 0px;
+    --border-radius-xxs: 2px;
+    --border-radius-xs: 4px;
+    --border-radius-s: 8px;
+    --border-radius-m: 12px;
+    --border-radius-l: 16px;
+    --border-radius-xl: 28px;
+    --border-radius-full: 1000px;
+        
+    /*Stroke*/
+    --stroke-none: 0px;
+    --stroke-s: 1px;
+    --stroke-m: 2px;
+
+    /*Padding*/
+    --padding-none: 0px;
+    --padding-3xs: 2px;
+    --padding-2xs: 4px;
+    --padding-xs: 6px;
+    --padding-s: 8px;
+    --padding-m: 12px;
+    --padding-l: 16px;
+    --padding-xl: 24px;
+    --padding-2xl: 28px;
+    
+    /*Margin*/
+    --margin-none: 0px;
+    --margin-3xs: 2px;
+    --margin-2xs: 4px;
+    --margin-xs: 6px;
+    --margin-s: 8px;
+    --margin-m: 12px;
+    --margin-l: 16px;
+    --margin-xl: 24px;
+    --margin-2xl: 28px;
+
+    /*Gap*/
+    --gap-none: 0px;
+    --gap-3xs: 2px;
+    --gap-2xs: 4px;
+    --gap-xs: 6px;
+    --gap-s: 8px;
+    --gap-m: 12px;
+    --gap-l: 16px;
+    --gap-xl: 24px;
+    --gap-2xl: 28px;
+}
+
+/*Reset y main*/
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: var(--margin-none);
+    padding:var(--padding-none);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: var(--color-on-surface);
+}
+
+app-root {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+    height: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/*Utilities*/
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-start {
+    justify-content: flex-start;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+/*Typography*/
+h1, h2, h3, h4, p {
+    margin: var(--margin-none);
+}
+
+.display-large {
+    font-family: 'Funnel Display', sans-serif;
+    font-size: 3.5rem;
+    line-height: 4rem;
+    font-weight: 700;
+}
+
+.display-medium {
+    font-family: 'Funnel Display', sans-serif;
+    font-size: 2.875rem;
+    line-height: 3.25rem;
+    font-weight: 700;
+}
+
+.display-small {
+    font-family: 'Funnel Display', sans-serif;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+}
+
+.headline-large {
+    font-family: 'Funnel Display', sans-serif;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+}
+
+.headline-medium {
+    font-family: 'Funnel Display', sans-serif;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+}
+
+.headline-small {
+    font-family: 'Funnel Display', sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    font-weight: 700;
+}
+
+.title-large {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.375rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+}
+
+.title-medium {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+}
+
+.title-small {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+}
+
+.label-large {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+}
+
+.label-medium {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+}
+
+.label-small {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+}
+
+/*Inputs*/
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2xs);
+
+    label {
+        color: var(--color-on-surface-var);
+    }
+
+    input {
+        font-family: inherit;
+        font-size: inherit;
+        width: 100%;
+        min-height: 54px;
+        padding: var(--padding-s);
+        border-radius: var(--border-radius-s);
+        border: 1px solid var(--color-outline-var);   
+    }
+
+    input::placeholder {
+        color: var(--color-on-surface-var);
+    }
+
+    input[type="date"] {
+        font-family: inherit;
+        font-size: inherit;
+    }
+
+}
+
+.textarea-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2xs);
+
+    label {
+        color: var(--color-on-surface-var);
+    }
+
+    textarea {
+        font-family: inherit;
+        font-size: inherit;
+        width: 100%;
+        min-height: 120px;
+        max-height: 480px;
+        overflow: auto;
+        padding: var(--padding-s);
+        border-radius: var(--border-radius-s);
+        border: 1px solid var(--color-outline-var);
+        resize: vertical;
+    }
+
+    textarea::placeholder {
+        color: var(--color-on-surface-var);
+    }
+
+}
+
+/*Buttons*/
+.btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 40px;
+    cursor: pointer;
+    padding: var(--padding-m);
+    border-radius: var(--border-radius-full);
+    border: solid 1px;
+    gap: var(--gap-s);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 500;
+    line-height: inherit;
+}
+
+.btn:disabled {
+    opacity: 60%;
+    cursor: not-allowed;
+}
+
+.btn.primary {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-on-primary);
+}
+
+.btn.primary:hover {
+    background: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+}
+
+.btn.primary:active {
+    background: var(--color-primary-active);
+    border-color: var(--color-primary-active);
+}

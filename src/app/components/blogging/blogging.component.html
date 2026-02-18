@@ -1,0 +1,59 @@
+<div class="grid">
+    <section class="flex flex-column justify-center align-center light ">
+        <div class="flex flex-column align-center content">
+            <img src="/images/logo.png" alt="Logo Angular">
+            <div class="flex flex-column text">
+                <h1 class="headline-large">Sistema de blogging</h1>
+                <p>Por favor, rellena los datos de formulario para añadir una publicación al blog.</p>
+            </div>
+            <div class="flex flex-column form">
+                <div class="input-wrapper">
+                    <label for="title" class="label-medium">Título (obligatorio)</label>
+                    <input type="text" [(ngModel)]="notice.title" name="title" placeholder="Título de la noticia"
+                        required>
+                </div>
+                <div class="input-wrapper">
+                    <label for="url-foto" class="label-medium">URL foto (obligatorio)</label>
+                    <input type="url" [(ngModel)]="notice.url_foto" name="url-foto" placeholder="URL de la foto"
+                        required>
+                </div>
+                <div class="textarea-wrapper">
+                    <label for="notice-content" class="label-medium">Texto (obligatorio)</label>
+                    <textarea [(ngModel)]="notice.notice_content" name="url-foto" placeholder="Texto de la noticia"
+                        required></textarea>
+                </div>
+                <div class="input-wrapper">
+                    <label for="date" class="label-medium">Fecha (obligatorio)</label>
+                    <input type="date" [(ngModel)]="notice.date" name="date" placeholder="dd/mm/yyyy" required>
+                </div>
+                <button (click)="saveNotice()" class="btn btn primary"
+                    [disabled]="!notice.title || !notice.url_foto || !notice.notice_content || !notice.date">Guardar
+                    noticia</button>
+            </div>
+        </div>
+    </section>
+    <section class="flex flex-column dark">
+        <div class="flex flex-column content">
+            <div class="flex flex-column text">
+                <h2 class="headline-medium">Listado de publicaciones</h2>
+                <p>Por favor, rellena los datos de formulario para añadir una publicación al blog.</p>
+            </div>
+        </div>
+        <div class="flex flex-column content">
+            <ul class="flex flex-column">
+                <!--Aquí se mete arriba for-->
+                <li *ngFor="let notice of news" class="flex flex-row">
+                    <img [src]="notice.url_foto" [alt]="notice.title">
+                    <div class="flex flex-column li-content">
+                        <h3 class="headline-small">{{notice.title}}</h3>
+                        <p>{{notice.notice_content}}</p>
+                        <span class="label-medium">{{notice.date | date:'dd/MM/yyyy'}}</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>
+
+
+
