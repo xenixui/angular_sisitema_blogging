@@ -1,7 +1,38 @@
-app-root {
+/*Layout*/
+main {
     display: flex;
-    justify-content: center;
-    width: 100%;
-    min-height: 100vh;
-    padding: 16px;
+    flex-direction: column;
+    height: 100%;
 }
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--color-surface);
+    color: var(--color-primary);
+    padding: var(--padding-xl);
+    gap: var(--gap-xl);
+
+    img {
+        width: 40px;
+        height: auto;
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+    padding: var(--padding-xl);
+    gap: var(--gap-xl);
+}
+
+/*App blogging*/
+app-blogging {
+    display: block;
+    height: 100%;
+}
+

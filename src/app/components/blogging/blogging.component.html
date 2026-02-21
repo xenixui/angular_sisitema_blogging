@@ -3,32 +3,27 @@
         <div class="flex flex-column align-center content">
             <img src="/images/logo.png" alt="Logo Angular">
             <div class="flex flex-column text">
-                <h1 class="headline-large">Sistema de blogging</h1>
+                <h2 class="headline-large">Crear publicación</h2>
                 <p>Por favor, rellena los datos de formulario para añadir una publicación al blog.</p>
             </div>
             <div class="flex flex-column form">
                 <div class="input-wrapper">
                     <label for="title" class="label-medium">Título (obligatorio)</label>
-                    <input type="text" [(ngModel)]="notice.title" name="title" placeholder="Título de la noticia"
-                        required>
+                    <input type="text" [(ngModel)]="entry.title" name="title" placeholder="Título de la noticia">
                 </div>
                 <div class="input-wrapper">
                     <label for="url-foto" class="label-medium">URL foto (obligatorio)</label>
-                    <input type="url" [(ngModel)]="notice.url_foto" name="url-foto" placeholder="URL de la foto"
-                        required>
+                    <input type="url" [(ngModel)]="entry.url_foto" name="url-foto" placeholder="URL de la foto">
                 </div>
                 <div class="textarea-wrapper">
-                    <label for="notice-content" class="label-medium">Texto (obligatorio)</label>
-                    <textarea [(ngModel)]="notice.notice_content" name="url-foto" placeholder="Texto de la noticia"
-                        required></textarea>
+                    <label for="entry-content" class="label-medium">Texto (obligatorio)</label>
+                    <textarea [(ngModel)]="entry.entry_content" name="entry-content" placeholder="Texto de la noticia"></textarea>
                 </div>
                 <div class="input-wrapper">
                     <label for="date" class="label-medium">Fecha (obligatorio)</label>
-                    <input type="date" [(ngModel)]="notice.date" name="date" placeholder="dd/mm/yyyy" required>
+                    <input type="date" [(ngModel)]="entry.date" name="date" placeholder="dd/mm/yyyy">
                 </div>
-                <button (click)="saveNotice()" class="btn btn primary"
-                    [disabled]="!notice.title || !notice.url_foto || !notice.notice_content || !notice.date">Guardar
-                    noticia</button>
+                <button (click)="saveEntry()" class="btn btn primary">Guardar noticia</button>
             </div>
         </div>
     </section>
@@ -42,14 +37,20 @@
         <div class="flex flex-column content">
             <ul class="flex flex-column">
                 <!--Aquí se mete arriba for-->
-                <li *ngFor="let notice of news" class="flex flex-row">
-                    <img [src]="notice.url_foto" [alt]="notice.title">
-                    <div class="flex flex-column li-content">
-                        <h3 class="headline-small">{{notice.title}}</h3>
-                        <p>{{notice.notice_content}}</p>
-                        <span class="label-medium">{{notice.date | date:'dd/MM/yyyy'}}</span>
-                    </div>
-                </li>
+                @for (entry of entryList; track entry.title) {
+                    <li>
+                        <article class="flex flex-row">
+                            <figure>
+                                <img [src]="entry.url_foto" [alt]="entry.title">
+                            </figure>
+                            <div class="flex flex-column li-content">
+                                <h3 class="headline-small">{{entry.title}}</h3>
+                                <p>{{entry.entry_content}}</p>
+                                <span class="label-medium">{{entry.date | date:'dd/MM/yyyy'}}</span>
+                                </div>
+                        </article>
+                    </li>
+                }
             </ul>
         </div>
     </section>

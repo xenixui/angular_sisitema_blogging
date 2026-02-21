@@ -1,6 +1,6 @@
-export interface INotice {
+export interface IEntry {
     title: string;
     url_foto: string;
-    notice_content: string;
+    entry_content: string;
     date: Date;
 }

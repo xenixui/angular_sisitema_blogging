@@ -1,3 +1,8 @@
+/*Font import*/
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 /*Variables*/
 :root {
     /*Color*/
@@ -83,20 +88,6 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     color: var(--color-on-surface);
-}
-
-app-root {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
-    min-height: 0;
-    height: 100%;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
 }
 
 /*Utilities*/
@@ -217,100 +208,8 @@ h1, h2, h3, h4, p {
     font-weight: 500;
 }
 
-/*Inputs*/
-.input-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-2xs);
-
-    label {
-        color: var(--color-on-surface-var);
-    }
-
-    input {
-        font-family: inherit;
-        font-size: inherit;
-        width: 100%;
-        min-height: 54px;
-        padding: var(--padding-s);
-        border-radius: var(--border-radius-s);
-        border: 1px solid var(--color-outline-var);   
-    }
-
-    input::placeholder {
-        color: var(--color-on-surface-var);
-    }
-
-    input[type="date"] {
-        font-family: inherit;
-        font-size: inherit;
-    }
-
-}
-
-.textarea-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-2xs);
-
-    label {
-        color: var(--color-on-surface-var);
-    }
-
-    textarea {
-        font-family: inherit;
-        font-size: inherit;
-        width: 100%;
-        min-height: 120px;
-        max-height: 480px;
-        overflow: auto;
-        padding: var(--padding-s);
-        border-radius: var(--border-radius-s);
-        border: 1px solid var(--color-outline-var);
-        resize: vertical;
-    }
-
-    textarea::placeholder {
-        color: var(--color-on-surface-var);
-    }
-
-}
-
-/*Buttons*/
-.btn {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    min-height: 40px;
-    cursor: pointer;
-    padding: var(--padding-m);
-    border-radius: var(--border-radius-full);
-    border: solid 1px;
-    gap: var(--gap-s);
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: 500;
-    line-height: inherit;
-}
-
-.btn:disabled {
-    opacity: 60%;
-    cursor: not-allowed;
-}
-
-.btn.primary {
-    background: var(--color-primary);
-    border-color: var(--color-primary);
-    color: var(--color-on-primary);
-}
-
-.btn.primary:hover {
-    background: var(--color-primary-hover);
-    border-color: var(--color-primary-hover);
-}
-
-.btn.primary:active {
-    background: var(--color-primary-active);
-    border-color: var(--color-primary-active);
+/*App root*/
+app-root {
+    display: block;
+    height: 100%; 
 }
