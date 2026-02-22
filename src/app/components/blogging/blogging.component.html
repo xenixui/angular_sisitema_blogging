@@ -7,9 +7,20 @@
                 <p>Por favor, rellena los datos de formulario para añadir una publicación al blog.</p>
             </div>
             <div class="flex flex-column form">
+                <!--@if (isError) {
+                    <div class="msg msg error">
+                        <span>{{ message }}</span>
+                        <button (click)="closeMessage()" class="btn btn base">✕</button>
+                    </div>
+                } else {
+                    <div class="msg msg success">
+                        <span>{{ message }}</span>
+                        <button (click)="closeMessage()" class="btn btn base">✕</button>
+                    </div>
+                }-->
                 <div *ngIf="message" class="msg" [ngClass]="{ 'error': isError, 'success': !isError }">
                     <span>{{ message }}</span>
-                    <button (click)="closeMessage()" class="btn btn base">✕</button>
+                    <button (click)="closeMessage()" class="btn btn base">✕</button> 
                 </div>
                 <div class="input-wrapper">
                     <label for="title" class="label-medium">Título (obligatorio)</label>
