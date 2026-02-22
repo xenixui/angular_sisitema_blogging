@@ -2,7 +2,8 @@
 main {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 100vh;
+    height: auto;
 }
 
 header {
@@ -33,6 +34,7 @@ footer {
 /*App blogging*/
 app-blogging {
     display: block;
-    height: 100%;
+    min-height: 100vh;
+    height: auto;
 }
 

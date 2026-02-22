@@ -1,12 +1,16 @@
 <div class="grid">
     <section class="flex flex-column justify-center align-center light ">
         <div class="flex flex-column align-center content">
-            <img src="/images/logo.png" alt="Logo Angular">
+            <img src="/images/logo.svg" alt="Logo Angular">
             <div class="flex flex-column text">
                 <h2 class="headline-large">Crear publicación</h2>
                 <p>Por favor, rellena los datos de formulario para añadir una publicación al blog.</p>
             </div>
             <div class="flex flex-column form">
+                <div *ngIf="message" class="msg" [ngClass]="{ 'error': isError, 'success': !isError }">
+                    <span>{{ message }}</span>
+                    <button (click)="closeMessage()" class="btn btn base">✕</button>
+                </div>
                 <div class="input-wrapper">
                     <label for="title" class="label-medium">Título (obligatorio)</label>
                     <input type="text" [(ngModel)]="entry.title" name="title" placeholder="Título de la noticia">
@@ -23,7 +27,7 @@
                     <label for="date" class="label-medium">Fecha (obligatorio)</label>
                     <input type="date" [(ngModel)]="entry.date" name="date" placeholder="dd/mm/yyyy">
                 </div>
-                <button (click)="saveEntry()" class="btn btn primary">Guardar noticia</button>
+                <button (click)="saveEntry()" class="btn btn primary">Guardar publicaión</button>
             </div>
         </div>
     </section>
@@ -31,17 +35,16 @@
         <div class="flex flex-column content">
             <div class="flex flex-column text">
                 <h2 class="headline-medium">Listado de publicaciones</h2>
-                <p>Por favor, rellena los datos de formulario para añadir una publicación al blog.</p>
+                <p>Echa un vistazo a las últimas publicaciones que se han añadido recientemente. ¡No te las pierdas!</p>
             </div>
         </div>
         <div class="flex flex-column content">
             <ul class="flex flex-column">
-                <!--Aquí se mete arriba for-->
                 @for (entry of entryList; track entry.title) {
                     <li>
                         <article class="flex flex-row">
                             <figure>
-                                <img [src]="entry.url_foto" [alt]="entry.title">
+                                <img [src]="entry.url_foto" [alt]="entry.title" (error)="placeholderImage($event)">
                             </figure>
                             <div class="flex flex-column li-content">
                                 <h3 class="headline-small">{{entry.title}}</h3>

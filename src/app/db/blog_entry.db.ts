@@ -1,4 +1,4 @@
-import { IEntry } from "../interfaces/ientry.interface"
+import { IEntry } from "../interfaces/ientry.interface";
 
 export const ENTRY_LIST: IEntry[] = [
     {
@@ -28,4 +28,5 @@ export const ENTRY_LIST: IEntry[] = [
         date: new Date(2026, 1, 10)
     }
 ]; 
+
 

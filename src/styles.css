@@ -1,4 +1,4 @@
-/*Font import*/
+/*Font imports*/
 @import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -13,6 +13,12 @@
     --color-primary-container: hsla(230, 60%, 90%, 1);
     --color-on-primary-container: hsla(230, 50%, 15%, 1);
 
+    --color-error-container: hsl(345, 61%, 90%);
+    --color-on-error-container: hsl(343, 50%, 15%);
+
+    --color-success-container: hsl(139, 61%, 90%);
+    --color-on-success-container: hsl(139, 50%, 15%);
+
     --color-surface: hsla(0, 0%, 100%, 1);
     --color-surface-var: hsla(270, 4%, 90%, 1);
     --color-on-surface: hsla(266, 3%, 10%, 1);
@@ -21,6 +27,9 @@
     --color-outline-var: hsla(264, 3%, 80%, 1);
 
     --color-opacity-primary-12: hsla(230, 50%, 34%, 0.12);
+    --color-opacity-on-surface-12: hsla(266, 3%, 10%, 0.12);
+    --color-opacity-on-surface-16: hsla(266, 3%, 10%, 0.16);
+    --color-opacity-on-surface-0: hsla(240, 2%, 10%, 0);
 
     /*Border radius*/
     --border-radius-none: 0px;
@@ -77,7 +86,7 @@
 }
 
 html, body {
-    height: 100%;
+    min-height: 100vh;
 }
 
 body {

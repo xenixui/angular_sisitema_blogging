@@ -17,23 +17,46 @@ export class BloggingComponent {
     title: "",
     url_foto: "", 
     entry_content: "",
-    date: new Date()
+    date: null
   }
 
   entryList: IEntry [] = ENTRY_LIST; 
 
+  message: string = "";
+  isError: boolean = false;
+
+  showMessage(text: string, isError: boolean) {
+    this.message = text;
+    this.isError = isError;
+  }
+  
+  closeMessage() {
+    this.message = "";
+  }
+
+  placeholderImage(event: Event) {
+    const img = event.target as HTMLImageElement;
+    img.src = '/images/placeholder.svg';
+  }
+
   saveEntry() {
-    if (this.entry.title && this.entry.url_foto && this.entry.entry_content && this.entry.date) {
-      this.entryList.push({ ...this.entry });
+    if (
+      this.entry.title && 
+      this.entry.url_foto && 
+      this.entry.entry_content && 
+      this.entry.date !== null) {
+      this.entryList = [...this.entryList, { ...this.entry }];
+
+      this.showMessage("Publicación creada correctamente", false);
 
       this.entry = {
         title: "",
         url_foto: "", 
         entry_content: "",
-        date: new Date()
+        date: null
       }
     } else {
-      alert('Por favor, rellene todos los campos');
+      this.showMessage("Por favor, rellene todos los campos", true);
     }
   }
 }
